@@ -1,10 +1,10 @@
 # ai-slop-remover
 
-A free, local-first CLI that finds the slop AI coding tools leave behind — narrative comments, swallowed errors, fake-done stubs, phantom imports, convention drift — scores your repo 0–100, and hands your coding agent a plan to remove it.
+A free, local-first CLI that finds the slop AI coding tools leave behind: narrative comments, swallowed errors, fake-done stubs, phantom imports, convention drift. It scores your repo 0-100 and hands your coding agent a plan to remove it.
 
-No accounts. No server. No telemetry. No LLM at scan time — deterministic static analysis that runs in seconds on your machine.
+No accounts. No server. No telemetry. No LLM at scan time: deterministic static analysis that runs in seconds on your machine.
 
-**Live demo & case study:** we scanned [browser-use](https://github.com/browser-use/browser-use) (60k+ stars): **74/100**, with 819 findings. Mature repos calibrate to A — express 97, openai/codex 96 (1.1M lines in 23s), gson 95, ollama 92. See the website in `docs/` for the full interactive reports.
+**Live demo & case study:** we scanned [browser-use](https://github.com/browser-use/browser-use) (60k+ stars): **74/100**, with 819 findings. Mature repos calibrate to A: express 97, openai/codex 96 (1.1M lines in 23s), gson 95, ollama 92. See the website in `docs/` for the full interactive reports.
 
 ## Quick start
 
@@ -16,7 +16,7 @@ npx ai-slop-remover scan .
 npx ai-slop-remover scan ~/work/my-repo
 ```
 
-You get a colored scorecard: the Slop Score (0–100 + grade), per-category penalties, and every finding with its location, evidence, and a concrete fix instruction.
+You get a colored scorecard: the Slop Score (0-100 plus a grade), per-category penalties, and every finding with its location, evidence, and a concrete fix instruction.
 
 ```text
   ai-slop-remover · scanned my-app (184 files, 24.1k lines) in 2.3s
@@ -101,13 +101,13 @@ Fingerprints are line-number independent, so the baseline survives unrelated edi
 
 **Universal slop:** comments that restate the code, banner/step-narration comments, placeholder and fake-done code, commented-out code blocks, imports of packages that don't exist (slopsquatting risk), silently swallowed errors.
 
-**Convention drift (our specialty):** the scanner statistically infers how *your* repo handles errors, accesses data, and names things — then flags the AI-generated code that silently diverges. A drift finding means "this differs from how 86% of comparable code in this repo does it," not "this is universally wrong."
+**Convention drift (our specialty):** the scanner statistically infers how *your* repo handles errors, accesses data, and names things, then flags the AI-generated code that silently diverges. A drift finding means "this differs from how 86% of comparable code in this repo does it," not "this is universally wrong."
 
 Test files, configs, scripts, examples, and migrations are excluded automatically. Established idioms (Java constructor guards, `@Override` delegation, Rust `lock().unwrap()`, TYPE_CHECKING imports, comment-justified empty catches) are recognized as intentional.
 
 ## Languages
 
-JavaScript, TypeScript, Python, Go, Java, C#, Rust, PHP, Ruby — parsed with tree-sitter. Phantom-import checking covers JS/TS (`package.json`), Python (`requirements.txt`/`pyproject.toml`), Go (`go.mod`), and Rust (`Cargo.toml`); Maven/NuGet/Composer manifests don't map cleanly to import statements, so Java/C#/PHP skip that one check rather than guess.
+JavaScript, TypeScript, Python, Go, Java, C#, Rust, PHP, and Ruby, parsed with tree-sitter. Phantom-import checking covers JS/TS (`package.json`), Python (`requirements.txt`/`pyproject.toml`), Go (`go.mod`), and Rust (`Cargo.toml`); Maven/NuGet/Composer manifests don't map cleanly to import statements, so Java/C#/PHP skip that one check rather than guess.
 
 ## CLI reference
 
@@ -127,8 +127,8 @@ ai-slop-remover baseline [path]    record current findings as the baseline
 
 ## How it works
 
-Deterministic AST analysis, a transparent scoring formula, and a hard line on false positives. The full write-up — architecture, every detector's heuristics, the drift engine, the score math, and how it was calibrated against real repos — is in [docs/TECHNICAL.md](docs/TECHNICAL.md).
+Deterministic AST analysis, a transparent scoring formula, and a hard line on false positives. The full write-up (architecture, every detector's heuristics, the drift engine, the score math, and how it was calibrated against real repos) is in [docs/TECHNICAL.md](docs/TECHNICAL.md).
 
 ## License
 
-MIT
+[MIT](LICENSE)
