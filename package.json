@@ -1,6 +1,6 @@
 {
   "name": "ai-slop-remover",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Local-first CLI that finds the slop AI coding tools leave behind — convention drift, comment noise, fake-done code, phantom imports — and hands your coding agent a fix plan.",
   "type": "module",
   "bin": {
