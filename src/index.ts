@@ -1,0 +1,10 @@
+export { scanRepo } from "./scan.js";
+export { computeScore, gradeFor } from "./score.js";
+export { fingerprintOf, readBaseline, withoutBaselined, writeBaseline, BASELINE_FILENAME } from "./baseline.js";
+export { renderFixPlan } from "./fix.js";
+export { renderHtmlReport } from "./report/html.js";
+export { renderJsonReport } from "./report/json.js";
+export { renderMarkdownReport } from "./report/markdown.js";
+export { renderTerminalReport } from "./report/terminal.js";
+export type { CategoryScore, Grade, ScoreReport } from "./score.js";
+export type { Detector, DetectorContext, Finding, ParsedFile, ScanOptions, ScanResult, Severity } from "./types.js";

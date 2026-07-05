@@ -1,0 +1,14 @@
+# dependencies & build output
+node_modules
+dist
+coverage
+
+.local
+
+# packaging
+*.tgz
+
+
+# misc
+*.log
+.DS_Store

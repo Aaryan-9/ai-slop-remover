@@ -1,0 +1,93 @@
+{
+  "name": "ai-slop-remover",
+  "version": "0.1.0",
+  "description": "Local-first CLI that finds the slop AI coding tools leave behind — convention drift, comment noise, fake-done code, phantom imports — and hands your coding agent a fix plan.",
+  "type": "module",
+  "bin": {
+    "ai-slop-remover": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/cli.js",
+    "dev": "tsx src/cli.ts",
+    "prepack": "npm run build",
+    "scan": "node dist/cli.js scan",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "ai-slop",
+    "slop",
+    "slop-detector",
+    "ai",
+    "ai-code",
+    "ai-generated-code",
+    "code-quality",
+    "code-review",
+    "code-analysis",
+    "static-analysis",
+    "linter",
+    "cli",
+    "developer-tools",
+    "technical-debt",
+    "code-smell",
+    "dead-code",
+    "duplicate-code",
+    "refactoring",
+    "quality-gate",
+    "tree-sitter",
+    "claude-code",
+    "cursor",
+    "copilot",
+    "codex",
+    "coding-agent",
+    "typescript",
+    "javascript",
+    "python",
+    "golang",
+    "rust",
+    "java"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aaryan-9/ai-slop-remover.git"
+  },
+  "homepage": "https://aaryan-9.github.io/ai-slop-remover/",
+  "bugs": {
+    "url": "https://github.com/Aaryan-9/ai-slop-remover/issues"
+  },
+  "author": "Aaryan Singh <aaryansingh6051@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "globby": "^14.1.0",
+    "ignore": "^5.3.2",
+    "picocolors": "^1.1.1",
+    "web-tree-sitter": "^0.26.10"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.9"
+  },
+  "optionalDependencies": {
+    "tree-sitter-c-sharp": "^0.23.5",
+    "tree-sitter-go": "^0.23.4",
+    "tree-sitter-java": "^0.23.5",
+    "tree-sitter-javascript": "^0.23.1",
+    "tree-sitter-php": "^0.24.2",
+    "tree-sitter-python": "^0.23.6",
+    "tree-sitter-ruby": "^0.23.1",
+    "tree-sitter-rust": "^0.24.0",
+    "tree-sitter-typescript": "^0.23.2"
+  }
+}
